@@ -1,4 +1,4 @@
-const GSHEET_URL = "https://script.google.com/macros/s/AKfycbwbCwOOLJieK3XqM34qSl5mQ9TxNOh6Dzl3TIKtfyfGiEIJIKtj_PUGl3SLDPZu7q1t/exec";
+const GSHEET_URL = process.env.GSHEET_URL;
 
 exports.handler = async (event) => {
   const headers = {
