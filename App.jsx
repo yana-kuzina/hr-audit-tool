@@ -66,7 +66,7 @@ const auditData = {
         ]
       },
       {
-        title: "Compliance (1-й C: SHRM 6C Framework)",
+        title: "Compliance",
         items: [
           { id: "o5", text: "Всі обов'язкові документи підписані та зібрані в перші 2 дні", priority: "critical" },
           { id: "o6", text: "Новий співробітник ознайомлений з HR-політиками (відпустки, лікарняні, remote policy)", priority: "critical" },
@@ -74,7 +74,7 @@ const auditData = {
         ]
       },
       {
-        title: "Clarification - розуміння ролі (2-й C)",
+        title: "Clarification - розуміння ролі",
         items: [
           { id: "o8", text: "Чіткі 30/60/90-денні цілі погоджені між менеджером та новим співробітником", priority: "critical" },
           { id: "o9", text: "Нова людина розуміє свої KPIs та критерії успіху в ролі", priority: "critical" },
@@ -82,7 +82,7 @@ const auditData = {
         ]
       },
       {
-        title: "Connection та Culture (3-й і 4-й C)",
+        title: "Connection та Culture",
         items: [
           { id: "o11", text: "Новий співробітник познайомлений з ключовими стейкхолдерами та суміжними командами", priority: "high" },
           { id: "o12", text: "Є регулярні 1:1 з менеджером у перші 90 днів (мін. раз на тиждень)", priority: "high" },
