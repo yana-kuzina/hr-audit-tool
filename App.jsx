@@ -375,6 +375,16 @@ export default function HRAuditTool() {
   const totalAnswered = Object.keys(checks).filter(k => checks[k] && checks[k] !== "none").length;
   const totalItems = Object.values(auditData).flatMap(d => d.sections.flatMap(s => s.items)).length;
 
+  const overallScore = (() => {
+    let totalEarned = 0, totalMax = 0;
+    Object.keys(auditData).forEach(domain => {
+      const s = getStats(domain);
+      totalEarned += s.earnedPoints;
+      totalMax += s.maxPoints;
+    });
+    return totalMax > 0 ? Math.round((totalEarned / totalMax) * 100) : 0;
+  })();
+
   const filteredSections = activeData.sections.map(s => ({
     ...s,
     items: filterPriority === "all" ? s.items : s.items.filter(i => i.priority === filterPriority)
@@ -401,7 +411,6 @@ export default function HRAuditTool() {
                 HR Audit
               </div>
               <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>HR Process Audit Tool</h1>
-              <p style={{ margin: "3px 0 0", color: "#94A3B8", fontSize: 12 }}>5 ключових HR-процесів · IT / Fintech</p>
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
@@ -425,6 +434,7 @@ export default function HRAuditTool() {
                   <div style={{ width: `${(totalAnswered / totalItems) * 100}%`, height: "100%", background: "#34D399", borderRadius: 3, transition: "width 0.3s" }} />
                 </div>
                 <span style={{ fontSize: 11, color: "#94A3B8" }}>{totalAnswered}/{totalItems}</span>
+                <span style={{ fontSize: 14, fontWeight: 800, color: scoreColor(overallScore), marginLeft: 4 }}>{overallScore}%</span>
               </div>
             </div>
           </div>
@@ -518,7 +528,7 @@ export default function HRAuditTool() {
                   <span style={{ fontSize: 20 }}>{activeData.icon}</span>
                   <h2 style={{ margin: 0, fontSize: 17, fontWeight: 700, color: "#1E293B" }}>{activeData.label}</h2>
                 </div>
-                <div style={{ fontSize: 11, color: "#64748B" }}>Джерела: {activeData.source}</div>
+                <div style={{ fontSize: 11, color: "#64748B" }}></div>
               </div>
               <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
                 <div style={{ display: "flex", gap: 10 }}>
