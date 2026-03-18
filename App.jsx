@@ -398,7 +398,7 @@ export default function HRAuditTool() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20, flexWrap: "wrap", gap: 12 }}>
             <div>
               <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#94A3B8", marginBottom: 4 }}>
-                HR Audit · SHRM / AIHR / Gallup
+                HR Audit
               </div>
               <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>HR Process Audit Tool</h1>
               <p style={{ margin: "3px 0 0", color: "#94A3B8", fontSize: 12 }}>5 ключових HR-процесів · IT / Fintech</p>
